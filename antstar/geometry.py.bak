@@ -106,7 +106,7 @@ def get_nearest_direction(reference_position, current_position, possibles_direct
     for possible_direction in possibles_directions:
         poss_x, poss_y = get_position_with_direction_decal(possible_direction, current_position)
         possibles_directions_scores[possible_direction] = abs(hypot(ref_x - poss_x, ref_y - poss_y))
-    sorted_possibles_directions_scores = sorted(list(possibles_directions_scores.items()), key=operator.itemgetter(1))
+    sorted_possibles_directions_scores = sorted(possibles_directions_scores.items(), key=operator.itemgetter(1))
     return sorted_possibles_directions_scores[0][0]
 
 
